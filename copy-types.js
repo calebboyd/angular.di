@@ -3,7 +3,7 @@ const Promise = require('bluebird'),
   fs = Promise.promisifyAll(require('fs')),
   { join, normalize, relative } = require('path'),
   match = normalize('src/di'),
-  root = normalize('node_modules/@angular/core/typings/src')
+  root = normalize('node_modules/@angular/core/src')
   type = join(root, 'type.d.ts')
 
 

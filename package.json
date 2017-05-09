@@ -1,6 +1,6 @@
 {
   "name": "angular.di",
-  "version": "4.0.0-rc.5",
+  "version": "4.0.0-rc.6",
   "description": "angular di as a standalone package",
   "scripts": {
     "bump": "node bump",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@angular/core": "4.0.0-rc.5",
+    "@angular/core": "4.0.0-rc.6",
     "bluebird": "^3.5.0",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.3.1",

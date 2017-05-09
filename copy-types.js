@@ -3,7 +3,7 @@ const Promise = require('bluebird'),
   fs = Promise.promisifyAll(require('fs')),
   { join, normalize, relative } = require('path'),
   match = normalize('src/di'),
-  root = normalize('node_modules/@angular/core/src')
+  root = normalize('node_modules/@angular/core/typings/src')
   type = join(root, 'type.d.ts')
 
 
@@ -28,10 +28,14 @@ function getName (x) {
 .filter(x => {
   return x.endsWith('d.ts') && ~x.indexOf(match) || x === type
 })
-.map(x => relative(root, x))
+.map(x => {
+  return relative(root, x)
+})
 .each(coroutine(function* (x) {
+  const reading = join(root, x)
+  const writing = getName(join('dist', x))
   return fs.writeFileAsync(
-    getName(join('dist', x)),
-    yield fs.readFileAsync(join(root, x))
+    writing,
+    yield fs.readFileAsync(reading)
   )
 })).catch(x => console.error(x))

@@ -4,7 +4,7 @@ let path = require('path');
 module.exports = {
   entry: './index.ts',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'bundle.js',
     libraryTarget: 'umd'
   },

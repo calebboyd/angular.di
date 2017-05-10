@@ -1,3 +1,5 @@
+# Deprecated - use `injection-js`
+
 ### angular.di
 Angular's di module, packaged seperately from core
 
